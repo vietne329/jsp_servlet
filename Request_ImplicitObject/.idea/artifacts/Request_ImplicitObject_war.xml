@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Request_ImplicitObject:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Request_ImplicitObject</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Request_ImplicitObject-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Request_ImplicitObject:war exploded" />
+    </root>
+  </artifact>
+</component>

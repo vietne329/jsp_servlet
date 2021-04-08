@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DropdownList:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DropdownList</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DropdownList-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="DropdownList:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JspInclude:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JspInclude</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JspInclude-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JspInclude:war exploded" />
+    </root>
+  </artifact>
+</component>

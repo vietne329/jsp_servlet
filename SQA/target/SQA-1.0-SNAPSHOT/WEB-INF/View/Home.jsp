@@ -24,9 +24,6 @@
 
     <nav class="navbar navbar-expand-md navbar-dark"
          style="background-color: #008080">
-        <div>
-            <h5> Xin chào: <%=request.getAttribute("tenGiangVien")%></h5>
-        </div>
 
         <ul class="navbar-nav">
             <a  style="margin-left: 100px; color: white" href="LogoutController"
@@ -40,7 +37,6 @@
     <h3 style=" margin-top: 10px;text-align: center;padding-bottom: 5px">QUẢN LÝ LỚP HỌC PHẦN</h3>
 <div style="margin-left: 100px">
 
-    <h5 style="margin-top: 40px;">Thông tin giảng dạy</h5>
 
     <h5 style="margin-top: 10px;">Giáo viên: <%=request.getAttribute("tenGiangVien")%></h5>
 
@@ -49,34 +45,68 @@
     <a style="font-weight: bold;margin-top: 20px; margin-left: 100px;" href="RegisterForward">Thêm lịch giảng dạy mới</a>
 
 
-    <table id="main" style="text-align: center;margin-top: 40px; margin-left: 30px;" border="1">
+    <h5 style="margin-left: 30px;margin-top: 30px">DANH SÁCH LỚP HỌC PHẦN</h5>
+
+    <table id="main" style="text-align: center;margin-top: 20px; margin-left: 30px;" border="1">
         <tr>
 
-            <th style="padding: 10px" >Lớp</th>
-            <th style="padding: 10px">Môn học</th>
-            <th style="padding: 10px">Số tín</th>
-            <th style="padding: 10px">Số kíp</th>
-            <th style="padding: 10px">Số tiết lý thuyết</th>
-            <th style="padding: 10px">Số tiết thực hành</th>
-            <th style="padding: 10px">Ghi chú</th>
+            <th style="padding: 20px" >Lớp</th>
+            <th style="padding: 20px">Môn học</th>
+            <th style="padding: 20px">Số tín</th>
+            <th style="padding: 20px">Số kíp</th>
+            <th style="padding: 20px">Số tiết lý thuyết</th>
+            <th style="padding: 20px">Số tiết thực hành</th>
+            <th style="padding: 20px">Thời gian</th>
+            <th style="padding: 20px">Ghi chú</th>
         </tr>
 
         <c:forEach items="${list_class}" var="l">
             <tr>
-                <th>${l.tenlop}</th>
-                <th>${l.tenmonhoc}</th>
-                <th>${l.sotin}</th>
-                <th>${l.sokip}</th>
-                <th>${l.sokiplythuyet}</th>
-                <th>${l.sokipthuchanh}</th>
-                <th> <a href="viewplan?scid=${l.id}">Xem kế hoạch</a> <a href="createplan?scid=${l.id}">Lập kế hoạch</a> <a style="color: orange" href="updateclass?scid=${l.id}">Sửa, </a><a style="color: red" href="deleteclass?scid=${l.id}">Xóa</a></th>
+                <th style="padding: 10px">${l.tenlop}</th>
+                <th style="padding: 10px">${l.tenmonhoc}</th>
+                <th style="padding: 10px">${l.sotin}</th>
+                <th style="padding: 10px">${l.sokip}</th>
+                <th style="padding: 10px">${l.sokiplythuyet}</th>
+                <th style="padding: 10px">${l.sokipthuchanh}</th>
+                <th style="padding: 10px">${l.thoigian}</th>
+                <th style="padding: 10px"> <a href="viewplan?scid=${l.id}">Đăng ký</a> </th>
             </tr>
         </c:forEach>
 
     </table>
 
+    <h5 style="margin-left: 30px;margin-top: 30px">DANH SÁCH LỚP HỌC PHẦN ĐÃ ĐĂNG KÝ</h5>
+
+<table id="main2" style="text-align: center;margin-top: 20px; margin-left: 30px; margin-bottom: 50px" border="1">
+    <tr>
+
+        <th style="padding: 20px" >Lớp</th>
+        <th style="padding: 20px">Môn học</th>
+        <th style="padding: 20px">Số tín</th>
+        <th style="padding: 20px">Số kíp</th>
+        <th style="padding: 20px">Số tiết lý thuyết</th>
+        <th style="padding: 20px">Số tiết thực hành</th>
+        <th style="padding: 20px">Thời gian</th>
+        <th style="padding: 20px">Chức năng</th>
+    </tr>
+
+    <c:forEach items="${list_class}" var="l">
+        <tr>
+            <th style="padding: 10px">${l.tenlop}</th>
+            <th style="padding: 10px">${l.tenmonhoc}</th>
+            <th style="padding: 10px">${l.sotin}</th>
+            <th style="padding: 10px">${l.sokip}</th>
+            <th style="padding: 10px">${l.sokiplythuyet}</th>
+            <th style="padding: 10px">${l.sokipthuchanh}</th>
+            <th style="padding: 10px">${l.thoigian}</th>
+            <th style="padding: 10px"> <a style="color: #28a745" href="viewplan?scid=${l.id}">Xem kế hoạch</a> <br> <a href="viewplan?scid=${l.id}">Lập kế hoạch</a>
+                <br> <a style="color: red" href="viewplan?scid=${l.id}">Xóa</a> </th>
+        </tr>
+    </c:forEach>
 
 
+
+</table>
 </body>
 
 </body>

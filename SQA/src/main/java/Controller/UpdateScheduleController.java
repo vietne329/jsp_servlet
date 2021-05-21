@@ -39,8 +39,9 @@ public class UpdateScheduleController extends HttpServlet {
         String sikip = request.getParameter("sokip");
         String lythuyet = request.getParameter("lythuyet");
         String thuchanh = request.getParameter("thuchanh");
+        String thoigian = request.getParameter("thoigian");
 
-        StudyClass studyClass = new StudyClass(Integer.parseInt(id),tenlop,tenmonhoc,Integer.parseInt(sotin),Integer.parseInt(sikip),Integer.parseInt(lythuyet),Integer.parseInt(thuchanh));
+        StudyClass studyClass = new StudyClass(Integer.parseInt(id),tenlop,tenmonhoc,Integer.parseInt(sotin),Integer.parseInt(sikip),Integer.parseInt(lythuyet),Integer.parseInt(thuchanh),thoigian);
         StudyClassDAO studyClassDAO = new StudyClassDAO();
         try {
             boolean check = studyClassDAO.updateClass(studyClass);

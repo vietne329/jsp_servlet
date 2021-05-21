@@ -74,7 +74,8 @@ public class StudyClassDAO {
                 int sokip = rs.getInt("sokip");
                 int sotietlythuyet = rs.getInt("sotietlythuyet");
                 int sotietthuchanh = rs.getInt("sotietthuchanh");
-                sc = new StudyClass(id,tenlop,tenmonhoc,sotin,sokip,sotietlythuyet,sotietthuchanh);
+                String thoigian = rs.getString("thoigian");
+                sc = new StudyClass(id,tenlop,tenmonhoc,sotin,sokip,sotietlythuyet,sotietthuchanh,thoigian);
 
             }
         } catch (SQLException e) {
@@ -102,8 +103,9 @@ public class StudyClassDAO {
                 int sotkip = rs.getInt("sokip");
                 int sotietlythuyet = rs.getInt("sotietlythuyet");
                 int sotietthuchanh = rs.getInt("sotietthuchanh");
+                String thoigian = rs.getString("thoigian");
 
-                list.add(new StudyClass(id, tenlop, tenmonhoc, sotinchi,sotkip,sotietlythuyet,sotietthuchanh));
+                list.add(new StudyClass(id, tenlop, tenmonhoc, sotinchi,sotkip,sotietlythuyet,sotietthuchanh,thoigian));
             }
         } catch (SQLException e) {
             printSQLException(e);

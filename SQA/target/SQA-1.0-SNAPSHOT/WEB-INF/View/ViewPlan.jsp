@@ -35,7 +35,7 @@
 
 
 
-<h3 style=" margin-top: 10px;text-align: center;padding-bottom: 5px">XEM KẾ HOẠCH GIẢNG DẠY</h3>
+<h3 style="pbw margin-top: 10px;text-align: center;padding-bottom: 5px">XEM KẾ HOẠCH GIẢNG DẠY</h3>
 <div style="margin-left: 100px">
 
 

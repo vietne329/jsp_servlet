@@ -64,6 +64,8 @@ public class RegisterDAO {
                 int sokip = rs.getInt("sokip");
                 int lythuyet = rs.getInt("sotietlythuyet");
                 int thuchanh = rs.getInt("sotietthuchanh");
+                String thoigian = rs.getString("thoigian");
+
 
                 sc.setId(id);
                 sc.setTenlop(tenlop);
@@ -72,6 +74,7 @@ public class RegisterDAO {
                 sc.setSokip(sokip);
                 sc.setSokiplythuyet(lythuyet);
                 sc.setSokipthuchanh(thuchanh);
+                sc.setThoigian(thoigian);
                 list.add(sc);
             }
         } catch (SQLException throwables) {

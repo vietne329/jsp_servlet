@@ -1,6 +1,7 @@
 package Bean;
 
 public class Teacher extends Account{
+    private int id;
     private String name;
     private String sdt;
     private String diachi;
@@ -9,11 +10,20 @@ public class Teacher extends Account{
     public Teacher(){
 
     }
-    public Teacher(String name, String sdt, String diachi, String email) {
+    public Teacher(int id,String name, String sdt, String diachi, String email) {
+        this.id = id;
         this.name = name;
         this.sdt = sdt;
         this.diachi = diachi;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

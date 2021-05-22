@@ -1,6 +1,7 @@
 package DAO;
 
 import Bean.StudyClass;
+import DB.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,9 +15,9 @@ public class StudyClassDAO {
 
     private static final String INSERT_CLASS_SQL = "INSERT INTO lophoc" + "  (tenlop, tenmonhoc, sotinchi,sokip,sotietlythuyet,sotietthuchanh) VALUES " +
             " (?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_CLASS_BY_ID = "select id,tenlop, tenmonhoc, sotinchi,sokip,sotietlythuyet,sotietthuchanh from lophoc where id =?";
+    private static final String SELECT_CLASS_BY_ID = "select id,tenlop, tenmonhoc, sotinchi,sokip,sotietlythuyet,sotietthuchanh,thoigian from lophoc where id =?";
     private static final String SELECT_ALL_CLASS = "select * from lophoc";
-    private static final String DELETE_CLASS_SQL = "delete from lophoc where id = ?";
+    private static final String DELETE_CLASS_SQL = "delete from lophocdangky where lophoc_id = ?";
     private static final String UPDATE_LOPHOC_SQL = "update lophoc set tenlop = ?,tenmonhoc= ?, sotinchi =?,sokip =? ,sotietlythuyet = ?, sotietthuchanh = ? where id = ?";
 
     public StudyClassDAO(){
@@ -155,6 +156,30 @@ public class StudyClassDAO {
                 }
             }
         }
+    }
+
+
+    public List<StudyClass> searchClassByName(String txtSearch) {
+        List<StudyClass> list = new ArrayList<>();
+        Connection conn = DBConnection.CreateConnection();
+        PreparedStatement ptmt =null;
+        ResultSet rs;
+        String sql = "select * from lophoc where tenmonhoc like ?";
+        try {
+            ptmt = conn.prepareStatement(sql);
+            ptmt.setString(1, "%" + txtSearch + "%");
+            rs = ptmt.executeQuery();
+
+            while (rs.next()) {
+                list.add(new StudyClass(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5),
+                        rs.getInt(6),rs.getInt(7),rs.getString(8)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+
     }
 }
 

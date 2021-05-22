@@ -66,7 +66,6 @@ public class RegisterDAO {
                 int thuchanh = rs.getInt("sotietthuchanh");
                 String thoigian = rs.getString("thoigian");
 
-
                 sc.setId(id);
                 sc.setTenlop(tenlop);
                 sc.setTenmonhoc(tenmonhoc);

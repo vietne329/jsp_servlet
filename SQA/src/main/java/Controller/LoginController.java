@@ -5,6 +5,8 @@ import Bean.StudyClass;
 import Bean.Teacher;
 import DAO.LoginDAO;
 import DAO.RegisterDAO;
+import DAO.RegisterdClassDAO;
+import DAO.TeacherDAO;
 import DB.DBConnection;
 
 import javax.servlet.*;
@@ -49,6 +51,11 @@ public class LoginController extends HttpServlet {
                     Connection conn = DBConnection.CreateConnection();
                     List<StudyClass> list = RegisterDAO.listClass(conn);
                     request.setAttribute("list_class",list);
+                    Teacher teacher1 = TeacherDAO.getTeacherID(tenGiangVien);
+                    int teacher_id = teacher1.getId();
+                    List<StudyClass> list1 = RegisterdClassDAO.listRegisterdClass(conn,String.valueOf(teacher_id));
+                    request.setAttribute("list_class2",list1);
+
 
                     HttpSession session = request.getSession();
                     session.setAttribute("teacher", teacher);

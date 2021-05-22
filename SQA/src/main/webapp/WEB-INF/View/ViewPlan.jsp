@@ -43,22 +43,22 @@
 
 <table id="main" style="text-align: center;margin-top: 40px; margin-left: 30px;" border="1">
     <tr>
-        <th style="padding: 10px">Tên lớp</th>
-        <th style="padding: 10px">Kíp</th>
-        <th style="padding: 10px">Môn học</th>
-        <th style="padding: 10px">Tên bài học</th>
-        <th style="padding: 10px">Loại</th>
-        <th style="padding: 10px">Ghi chú</th>
+        <th style="padding: 20px">Tên lớp</th>
+        <th style="padding: 20px">Kíp</th>
+        <th style="padding: 20px">Môn học</th>
+        <th style="padding: 20px">Tên bài học</th>
+        <th style="padding: 20px">Loại</th>
+        <th style="padding: 20px">Ghi chú</th>
     </tr>
 
     <c:forEach items="${list}" var="l">
         <tr>
-            <th>${l.tenlop}</th>
-            <th>${l.kip}</th>
-            <th>${l.tenmonhoc}</th>
-            <th>${l.tenbaihoc}</th>
-            <th>${l.loai}</th>
-            <th>${l.ghichu}</th>
+            <th style="padding: 20px">${l.tenlop}</th>
+            <th style="padding: 20px">${l.kip}</th>
+            <th style="padding: 20px">${l.tenmonhoc}</th>
+            <th style="padding: 20px">${l.tenbaihoc}</th>
+            <th style="padding: 20px">${l.loai}</th>
+            <th style="padding: 20px">${l.ghichu}</th>
         </tr>
     </c:forEach>
 
